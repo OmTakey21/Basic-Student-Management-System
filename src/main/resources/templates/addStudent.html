@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+		<nav>
+			<a href="/" th:class ="${currentPage}=='index' ? 'active':''">Home</a>
+			<a href="/registerPage" th:class="${currentPage}=='addStudent' ? 'active':''">Add Student</a>
+			<a href="/updatePage" th:class="${currrentPage}=='updateStudent' ? 'active':''">Change Data</a>
+			<a href="/deletePage" th:class="${currentPage}=='removeStudent' ? 'active':''">Delete Student</a>
+			<a href="/searchPage" th:class="${currentPage}=='searchStudent' ? 'active':''">Search Student</a>
+			<a href="/findAll" th:class="${currentPage}=='findAllStudents' ? 'active':''">View Students</a>
+		</nav>
+	</div>
+    <div class="container_01">
+        <h1>Add new Student</h1>
+        <form action="/reg" method="post" class="form-container">
+            <div class="form-group">
+                <label for="univId">University ID: </label>
+                <input type="text" id="univId" name="univId" required>
+            </div> 
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail Id: </label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch : </label>
+                <input type="text" id="branch" name="branch" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address: </label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button">Add Student</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

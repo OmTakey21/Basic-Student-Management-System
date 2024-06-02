@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View Student</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+		<nav>
+			<ul>
+				<li><a href="/" th:class ="${currentPage}=='index' ? 'active':''">Home</a></li>
+				<li><a href="/registerPage" th:class="${currentPage}=='addStudent' ? 'active':''">Add Student</a></li>
+				<li><a href="/updatePage" th:class="${currrentPage}=='updateStudent' ? 'active':''">Change Data</a></li>
+				<li><a href="/deletePage" th:class="${currentPage}=='removeStudent' ? 'active':''">Delete Student</a></li>
+				<li><a href="/searchPage" th:class="${currentPage}=='searchStudent' ? 'active':''">Search Student</a></li>
+				<li><a href="/findAll" th:class="${currentPage}=='viewStudent' ? 'active':''">View Students</a></li>
+			</ul>
+		</nav>
+	</div>
+    <div class="container_01">
+        <h1>Student List</h1>
+        <table class="students-table">
+            <thead>
+                <tr>
+                    <th>University Id</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Branch</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${Student}"> 
+                    <td th:text="${Student.univId}"></td>
+                    <td th:text="${Student.name}"></td>
+                    <td th:text="${Student.email}"></td>
+                    <td th:text="${Student.branch}"></td>
+                    <td th:text="${Student.address}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

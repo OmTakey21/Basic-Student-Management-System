@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<a href="/" th:class ="${currentPage}=='index' ? 'active':''">Home</a>
+			<a href="/registerPage" th:class="${currentPage}=='addStudent' ? 'active':''">Add Student</a>
+			<a href="/updatePage" th:class="${currrentPage}=='updateStudent' ? 'active':''">Change Data</a>
+			<a href="/deletePage" th:class="${currentPage}=='removeStudent' ? 'active':''">Delete Student</a>
+			<a href="/searchPage" th:class="${currentPage}=='searchStudent' ? 'active':''">Search Student</a>
+			<a href="/findAll" th:class="${currentPage}=='viewStudent' ? 'active':''">View Students</a>
+		</nav>
+	</div>
+	<br>
+	<div class="container_01">
+		<h1>Student Management System</h1>
+		<div class="action" id="register">
+			<a href="/registerPage" class="button">Register Student</a>
+			<p class="description">Add a new entry of a student!</p>
+		</div>
+		<div class="action" id="view_all">
+			<a href="/findAll" class="button">View All Students</a>
+			<p class="description">View all registered students</p>
+		</div>
+		<div class="action" id="update">
+			<a href="/updatePage" class="button">Update Student Data</a>
+			<p class="description">Change & Update Students Data</p>
+		</div>
+		<div class="action" id="delete">
+			<a href="/deletePage" class="button">Remove Student</a>
+			<p class="description">Remove student from university!</p>
+		</div>
+		<div class="action" id="search">
+			<a href="/searchPage" class="button">Search for a Student</a>
+			<p class="description">Search student in university</p>
+		</div>
+	</div>
+</body>
+</html>

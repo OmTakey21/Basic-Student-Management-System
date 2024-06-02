@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Remove Student</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+			<a href="/" th:class ="${currentPage}=='index' ? 'active':''">Home</a>
+			<a href="/registerPage" th:class="${currentPage}=='addStudent' ? 'active':''">Add Student</a>
+			<a href="/updatePage" th:class="${currrentPage}=='updateStudent' ? 'active':''">Change Data</a>
+			<a href="/deletePage" th:class="${currentPage}=='removeStudent' ? 'active':''">Delete Student</a>
+			<a href="/searchPage" th:class="${currentPage}=='searchStudent' ? 'active':''">Search Student</a>
+			<a href="/findAll" th:class="${currentPage}=='findAllStudents' ? 'active':''">View Students</a>
+		</nav>
+    </div>
+    <div class="container_01">
+        <h1>Remove Student</h1>
+        <p class="warning">Warning : This action can not be undone!</p>
+        <form action="/del" method="post" class="form-container">
+            <div class="form-group">
+                <label for="univIdDelete">University Id: </label>
+                <input type="text" id="univIdDelete" name="univId" placeholder="Enter University Id" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button">Delete Student</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
